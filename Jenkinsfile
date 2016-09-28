@@ -9,7 +9,7 @@ node {
   def img = docker.build('coxauto/jenkins-docker-python-example:latest', '.')
 
   stage 'Publish'
-  docker.withRegistry('https://nexus.doyouevenco.de', 'nexus-admin') {
+  docker.withRegistry('https://nexus.coxautodev.com', 'nexus-admin') {
      img.push('latest')
   }
 
